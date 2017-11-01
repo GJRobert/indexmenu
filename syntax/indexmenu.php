@@ -806,6 +806,8 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
 
             $link = $item['id'];
             $more = 'idx='.$item['id'];
+
+            /*
             //namespace link
             if($item['hns']) {
                 $link  = $item['hns'];
@@ -832,9 +834,35 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
             $ret .= '</a>';
             }
             if($markCurrentPage) $ret .= '</span>';
+            */
+
+            //namespace link
+            if($item['hns']) {
+                //current page is shown?
+                $markCurrentPage = $this->getConf('hide_headpage') && $item['hns'] == $INFO['id'];
+            }
+            //all namespace links are toggles
+            $tagid = "indexmenu_idx";
+            if($item['open']) $tagid .= ' open';
+
+            $ret .= '<a href="'.wl($link, $more).'" class="'.$tagid.'">';
+            $ret .= $item['title'];
+            $ret .= '</a>';
+            //namespace with headpage: additional page link+icon
+            if($markCurrentPage) $ret .= '<span class="curid">';
+            if($item['hns']) {
+                $link  = $item['hns'];
+                $more  = '';
+                $tagid = "indexmenu_idx_head";
+                $ret .= '<a href="'.wl($link, $more).'" class="'.$tagid.'">';
+            $ret .= ' <img src="'.DOKU_BASE.'lib/images/page.png" />';
+            $ret .= '</a>';
+            }
+            if($markCurrentPage) $ret .= '</span>';
         } else {
             //page link
             $ret .= html_wikilink(':'.$item['id']);
+            //$ret .= ' <img src="'.DOKU_BASE.'lib/images/page.png" />'; //additional page icon
         }
         return $ret;
     }
