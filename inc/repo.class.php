@@ -7,7 +7,7 @@ class repo_indexmenu_plugin {
      */
 
     function send_theme($file) {
-        require_once(DOKU_PLUGIN.'indexmenu/syntax/indexmenu.php');
+        require_once(DOKU_PLUGIN.'indexmenughsr/syntax/indexmenu.php');
         $idxm = new syntax_plugin_indexmenu_indexmenu();
         //clean the file name
         $file = cleanID($file);

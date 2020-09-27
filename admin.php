@@ -339,7 +339,7 @@ class admin_plugin_indexmenu extends DokuWiki_Admin_Plugin {
         $data = $this->_remotequery("http://samuele.netsons.org/dokuwiki/lib/plugins/indexmenu/remote.php?check=$date");
         if($data === "") {
             msg($this->getLang('noupdates'), 1);
-            $data .= @preg_replace('/\n\n.*$/s', '', @io_readFile(DOKU_PLUGIN.'indexmenu/changelog'))."\n%\n";
+            $data .= @preg_replace('/\n\n.*$/s', '', @io_readFile(DOKU_PLUGIN.'indexmenughsr/changelog'))."\n%\n";
             $w = 1;
         } else {
             $data = preg_replace('/\<br(\s*)?\/?\>/i', "", $data);

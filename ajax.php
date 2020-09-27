@@ -34,7 +34,7 @@ class ajax_indexmenu_plugin {
         $succ = false;
         //send the zip
         if($req == 'send' and isset($_REQUEST['t'])) {
-            include(DOKU_PLUGIN.'indexmenu/inc/repo.class.php');
+            include(DOKU_PLUGIN.'indexmenughsr/inc/repo.class.php');
             $repo = new repo_indexmenu_plugin;
             $succ = $repo->send_theme($_REQUEST['t']);
         }
@@ -151,7 +151,7 @@ class ajax_indexmenu_plugin {
      * @author Rene Hadler <rene.hadler@iteas.at>
      */
     function print_index($ns) {
-        require_once(DOKU_PLUGIN.'indexmenu/syntax/indexmenu.php');
+        require_once(DOKU_PLUGIN.'indexmenughsr/syntax/indexmenu.php');
         global $conf;
         $idxm  = new syntax_plugin_indexmenu_indexmenu();
 		$ns=$idxm->_parse_ns(rawurldecode($ns));

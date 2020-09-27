@@ -292,7 +292,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
      * @author Rene Hadler <rene.hadler@iteas.at>
      */
     function print_index($ns) {
-        require_once(DOKU_PLUGIN.'indexmenu/syntax/indexmenu.php');
+        require_once(DOKU_PLUGIN.'indexmenughsr/syntax/indexmenu.php');
         global $conf;
         $idxm     = new syntax_plugin_indexmenu_indexmenu();
         $ns       = $idxm->_parse_ns(rawurldecode($ns));
