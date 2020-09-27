@@ -1,4 +1,4 @@
-base   indexmenu_ghsr
+base   indexmenughsr
 author Samuele Tognini, GHSRobert Ciang
 email  samuele@samuele.netsons.org, robertus0617@gmail.com
 date   2020-09-28
