@@ -14,7 +14,7 @@ if(!defined('DOKU_INC')) die();
  * All DokuWiki plugins to extend the parser/rendering mechanism
  * need to inherit from this class
  */
-class syntax_plugin_indexmenu_tag extends DokuWiki_Syntax_Plugin {
+class syntax_plugin_indexmenughsr_tag extends DokuWiki_Syntax_Plugin {
 
     /**
      * What kind of syntax are we?
@@ -34,7 +34,7 @@ class syntax_plugin_indexmenu_tag extends DokuWiki_Syntax_Plugin {
      * Connect pattern to lexer
      */
     function connectTo($mode) {
-        $this->Lexer->addSpecialPattern('{{indexmenu_n>.+?}}', $mode, 'plugin_indexmenu_tag');
+        $this->Lexer->addSpecialPattern('{{indexmenu_n>.+?}}', $mode, 'plugin_indexmenughsr_tag');
     }
 
     /**

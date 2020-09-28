@@ -9,12 +9,12 @@
 if(!defined('DOKU_INC')) die();
 
 require_once (DOKU_INC.'inc/HTTPClient.php');
-require_once(DOKU_PLUGIN."indexmenu/inc/pclzip.lib.php");
+require_once(DOKU_PLUGIN."indexmenughsr/inc/pclzip.lib.php");
 
-if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR', DOKU_PLUGIN."indexmenu/images");
+if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR', DOKU_PLUGIN."indexmenughsr/images");
 define('INDEXMENU_ICOS', 'base,folder,folderopen,folderh,folderhopen,page,plus,minus,nolines_plus,nolines_minus,minusbottom,plusbottom,join,joinbottom,line,empty');
 
-class admin_plugin_indexmenu extends DokuWiki_Admin_Plugin {
+class admin_plugin_indexmenughsr extends DokuWiki_Admin_Plugin {
     var $req = 'fetch';
     var $repos = array(
         "url"    => array(DOKU_URL),

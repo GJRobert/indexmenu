@@ -8,7 +8,7 @@
  */
 
 if(!defined('DOKU_INC')) die();
-if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR', DOKU_PLUGIN."indexmenu/images");
+if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR', DOKU_PLUGIN."indexmenughsr/images");
 
 require_once(DOKU_INC.'inc/search.php');
 
@@ -16,7 +16,7 @@ require_once(DOKU_INC.'inc/search.php');
  * All DokuWiki plugins to extend the parser/rendering mechanism
  * need to inherit from this class
  */
-class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
+class syntax_plugin_indexmenughsr_indexmenu extends DokuWiki_Syntax_Plugin {
 
     var $sort = false;
     var $msort = false;
@@ -49,7 +49,7 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
      * Connect pattern to lexer
      */
     public function connectTo($mode) {
-        $this->Lexer->addSpecialPattern('{{indexmenu>.+?}}', $mode, 'plugin_indexmenu_indexmenu');
+        $this->Lexer->addSpecialPattern('{{indexmenu>.+?}}', $mode, 'plugin_indexmenughsr_indexmenu');
     }
 
     /**

@@ -15,14 +15,14 @@ if(!defined('DOKU_INC')) define('DOKU_INC', realpath(dirname(__FILE__).'/../../.
 if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC.'lib/plugins/');
 require_once(DOKU_INC.'inc/init.php');
 require_once(DOKU_INC.'inc/auth.php');
-if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR', DOKU_PLUGIN."indexmenu/images");
+if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR', DOKU_PLUGIN."indexmenughsr/images");
 //close session
 session_write_close();
 
-$ajax_indexmenu = new ajax_indexmenu_plugin;
-$ajax_indexmenu->render();
+$ajax_indexmenughsr = new ajax_indexmenughsr_plugin;
+$ajax_indexmenughsr->render();
 
-class ajax_indexmenu_plugin {
+class ajax_indexmenughsr_plugin {
     /**
      * Output
      *
@@ -35,7 +35,7 @@ class ajax_indexmenu_plugin {
         //send the zip
         if($req == 'send' and isset($_REQUEST['t'])) {
             include(DOKU_PLUGIN.'indexmenughsr/inc/repo.class.php');
-            $repo = new repo_indexmenu_plugin;
+            $repo = new repo_indexmenughsr_plugin;
             $succ = $repo->send_theme($_REQUEST['t']);
         }
         if($succ) return true;
@@ -153,7 +153,7 @@ class ajax_indexmenu_plugin {
     function print_index($ns) {
         require_once(DOKU_PLUGIN.'indexmenughsr/syntax/indexmenu.php');
         global $conf;
-        $idxm  = new syntax_plugin_indexmenu_indexmenu();
+        $idxm  = new syntax_plugin_indexmenughsr_indexmenu();
 		$ns=$idxm->_parse_ns(rawurldecode($ns));
         $level = -1;
         $max   = 0;

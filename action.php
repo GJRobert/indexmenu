@@ -8,7 +8,7 @@
 
 if(!defined('DOKU_INC')) die();
 
-class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
+class action_plugin_indexmenughsr extends DokuWiki_Action_Plugin {
 
     /**
      * plugin should use this method to register its handlers with the dokuwiki's event controller
@@ -294,7 +294,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
     function print_index($ns) {
         require_once(DOKU_PLUGIN.'indexmenughsr/syntax/indexmenu.php');
         global $conf;
-        $idxm     = new syntax_plugin_indexmenu_indexmenu();
+        $idxm     = new syntax_plugin_indexmenughsr_indexmenu();
         $ns       = $idxm->_parse_ns(rawurldecode($ns));
         $level    = -1;
         $max      = 0;

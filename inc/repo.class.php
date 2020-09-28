@@ -1,5 +1,5 @@
 <?php
-class repo_indexmenu_plugin {
+class repo_indexmenughsr_plugin {
     /**
      * Send a zipped theme
      *
@@ -8,7 +8,7 @@ class repo_indexmenu_plugin {
 
     function send_theme($file) {
         require_once(DOKU_PLUGIN.'indexmenughsr/syntax/indexmenu.php');
-        $idxm = new syntax_plugin_indexmenu_indexmenu();
+        $idxm = new syntax_plugin_indexmenughsr_indexmenu();
         //clean the file name
         $file = cleanID($file);
         //check config
@@ -23,7 +23,7 @@ class repo_indexmenu_plugin {
         //no cached zip or older than 1 day
         if($lm < time() - (60 * 60 * 24)) {
             //create the zip
-            require_once(DOKU_PLUGIN."indexmenu/inc/pclzip.lib.php");
+            require_once(DOKU_PLUGIN."indexmenughsr/inc/pclzip.lib.php");
             @unlink($zipfile);
             $zip    = new PclZip($zipfile);
             $status = $zip->add($localtheme, PCLZIP_OPT_REMOVE_ALL_PATH);
