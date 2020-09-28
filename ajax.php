@@ -66,7 +66,7 @@ class ajax_indexmenu_plugin {
      */
 
     function local_themes() {
-        $list   = 'indexmenu,'.DOKU_URL.",lib/plugins/indexmenu/images,";
+        $list   = 'indexmenu,'.DOKU_URL.",lib/plugins/indexmenughsr/images,";
         $data   = array();
         $handle = @opendir(INDEXMENU_IMG_ABSDIR);
         while(false !== ($file = readdir($handle))) {

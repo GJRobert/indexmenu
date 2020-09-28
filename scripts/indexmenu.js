@@ -70,7 +70,7 @@ function dTree(objName, theme) {
     var objExt = IndexmenuUtils.determineExtension(theme);
     this.config = {
         urlbase: DOKU_BASE + 'doku.php?id=',           // base of dokuwiki (set in page)
-        plugbase: DOKU_BASE + 'lib/plugins/indexmenu', // base of plugin folder
+        plugbase: DOKU_BASE + 'lib/plugins/indexmenughsr', // base of plugin folder
         useCookies: true,                              // use cookies (set in page) e.g. disabled for context option
         scroll: true,                                  // enable scrolling of tree in too small columns (set in page)
         toc: true,                                     // enable ToC popups in tree (set in page)

@@ -123,7 +123,7 @@ class admin_plugin_indexmenu extends DokuWiki_Admin_Plugin {
         $turl = "";
         $info = "";
         //get list
-        $data = $this->_remotequery($this->repos['url'][$n]."/lib/plugins/indexmenu/ajax.php?req=local");
+        $data = $this->_remotequery($this->repos['url'][$n]."/lib/plugins/indexmenughsr/ajax.php?req=local");
         $data = explode(",", $data);
         //print themes
         for($i = 3; $i < count($data); $i++) {
@@ -158,7 +158,7 @@ class admin_plugin_indexmenu extends DokuWiki_Admin_Plugin {
                 }
             } else {
                 $act = "install";
-                ptln('      <a href="'.$this->repos['url'][$n]."/lib/plugins/indexmenu/ajax.php?req=send&amp;t=".$theme.'">Download</a>');
+                ptln('      <a href="'.$this->repos['url'][$n]."/lib/plugins/indexmenughsr/ajax.php?req=send&amp;t=".$theme.'">Download</a>');
             }
             $this->_form_open($act, $n);
             if($n == 0 && !is_file(INDEXMENU_IMG_ABSDIR."/".$theme."/info.txt")) {
@@ -186,7 +186,7 @@ class admin_plugin_indexmenu extends DokuWiki_Admin_Plugin {
         $tmp = $absdir."/tmp";
 
         //send theme list request
-        if(!$zipfile = io_download($repo."/lib/plugins/indexmenu/ajax.php?req=send&t=".$name, "$tmp/", true)) {
+        if(!$zipfile = io_download($repo."/lib/plugins/indexmenughsr/ajax.php?req=send&t=".$name, "$tmp/", true)) {
             msg($this->getLang('down_err').": $name", -1);
             $return = false;
         } else {
@@ -253,7 +253,7 @@ class admin_plugin_indexmenu extends DokuWiki_Admin_Plugin {
     function upload($theme, $info) {
         $return = true;
         $host   = 'samuele.netsons.org';
-        $path   = '/dokuwiki/lib/plugins/indexmenu/upload/index.php';
+        $path   = '/dokuwiki/lib/plugins/indexmenughsr/upload/index.php';
         //TODO: merge zip creation with that in ajax.php (create a class?)
         if(!$absdir = $this->checktmpsubdir()) return false;
         $tmp      = $absdir."/tmp";

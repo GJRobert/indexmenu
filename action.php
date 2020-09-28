@@ -182,7 +182,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
      * @author Gerrit Uitslag <klapinklapin@gmail.com>
      */
     private function _getlocalThemes() {
-        $themebase = 'lib/plugins/indexmenu/images';
+        $themebase = 'lib/plugins/indexmenughsr/images';
 
         $handle = @opendir(DOKU_INC.$themebase);
         $themes = array();

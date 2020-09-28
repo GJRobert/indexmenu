@@ -204,7 +204,7 @@ var IndexmenuContextmenu = {
         if (!$toc_picker.length) {
             $toc_picker = IndexmenuUtils.createPicker(picker, 'indexmenu_toc');
             $toc_picker
-                .html('<a href="#"><img src="' + DOKU_BASE + 'lib/plugins/indexmenu/images/close.gif" class="indexmenu_close" /></a><div />')
+                .html('<a href="#"><img src="' + DOKU_BASE + 'lib/plugins/indexmenughsr/images/close.gif" class="indexmenu_close" /></a><div />')
                 .children().first().click(function (event) {
                     event.stopPropagation();
                     return IndexmenuContextmenu.togglePicker($toc_picker, jQuery('#' + btn));

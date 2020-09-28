@@ -32,7 +32,7 @@ if (window.toolbar != undefined) {
     window.toolbar[window.toolbar.length] = {
         "type": "Indexmenu",
         "title": "Insert the Indexmenu tree",
-        "icon": "../../plugins/indexmenu/images/indexmenu_toolbar.png"
+        "icon": "../../plugins/indexmenughsr/images/indexmenu_toolbar.png"
     }
 }
 
